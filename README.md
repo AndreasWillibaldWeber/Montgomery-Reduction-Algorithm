@@ -5,27 +5,27 @@ Montgomery Reduction Algorithm python package to verify and study hardware imple
 
 RSA is defined for
 
- - encryption as $ c = m^e mod n $
+ - encryption as $c = m^e \mod n$
 
- - decryption as $ m = c^d mod n $
+ - decryption as $m = c^d \mod n$
 
 where:
 
- - m: message with N-bits
+ - $m$: message with N-bits
 
- - c: ciphertext with N-bits
+ - $c$: ciphertext with N-bits
 
- - n: modulus with N-bits
+ - $n$: modulus with N-bits
 
- - e: public key with E-bits
+ - $e$: public key with E-bits
 
- - d: private key with N-bits
+ - $d$: private key with N-bits
 
 ## Pseudocode of the Montgomery Modular Multiplication
 
-$ MMM(a,b,n) = a * b * 2^{-N} $
+$\mathrm{MMM}(a,b,n) = a * b * 2^{-\mathrm{N}}$
 
-Hint: $k$ constant is removed by $ 2^{-N} $
+**Hint**: $k$ constant is removed by $2^{-\mathrm{N}}$
 
 ```
 s(0) = 0
@@ -43,9 +43,9 @@ MMM(a, b, n) = d
 
 ## Pseudocode of the Montgomery Modular Exponentiation!
 
-$ MME(m,e,n) = c = m^e mod n $
+$\mathrm{MME}(m,e,n) = c = m^e \mod n $
 
-$ k = 2^{2N} mod n $
+$k = 2^{2\mathrm{N}} \mod n$
 
 ```
 m(0) = MMM(m, k, n)
