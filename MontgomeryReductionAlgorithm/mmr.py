@@ -10,7 +10,7 @@ class MMR():
     logging.basicConfig(
         format='%(message)s',
         level=logging.DEBUG, 
-        filename="logfile", 
+        filename="logs.log", 
         filemode="w"
     )
 
