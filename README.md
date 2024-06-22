@@ -67,6 +67,18 @@ end
 c = MMM(r(E), 1, n)
 ```
 
+# Roadmap to v1.0.0-alpha
+
+- [x] implement Montgomery Modular Multiplication (MMM)
+- [x] implement Montgomery Modular Exponentiation (MME)
+- [x] implement logging of calculation steps
+- [x] implement tests
+- [ ] implement the calculation of test vectors
+- [ ] implement the generation of random test vectors
+- [ ] enhance logging
+- [ ] enhance package structure
+- [ ] enhance testing
+
 # References
 
 [1] Christof Paar, Jan Pelzl. Understanding Cryptography: A Textbook for Students and Practitioners, Springer, 2010.
