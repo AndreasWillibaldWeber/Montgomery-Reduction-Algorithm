@@ -1,6 +1,12 @@
 # Montgomery-Reduction-Algorithm
 Montgomery Reduction Algorithm python package to verify and study hardware implementations.
 
+## Config MMR Package
+
+- `MMR.N`: Default value is `32`
+- `MMR.MME_LOG`: Default is `False`. Set to `True` to log the mme m and r values for each calculation step.
+- `MMR.MMM_LOG`: Default is `False`. Set to `True` to log the mmm q and s values for each calculation step.
+
 ## Montgomery Modular Reduction
 
 RSA is defined for
