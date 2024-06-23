@@ -83,7 +83,7 @@ c = MMM(r(E), 1, n)
 - [ ] implement the generation of random test vectors
 - [ ] add use description to readme.md
 - [ ] add an example and description of how to use the package
-- [ ] add build description to readme.md
+- [x] add build description to readme.md
 - [ ] implement build, test and release workflow
 - [ ] enhance logging
 - [ ] enhance package structure
