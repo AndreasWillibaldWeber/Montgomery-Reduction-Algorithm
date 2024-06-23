@@ -1,6 +1,6 @@
 from MontgomeryReductionAlgorithm.mmr import MMR
 
-__version__ = "0.0.1"
+__version__ = "0.0.1-alpha"
 __author__ = "Montgomery Reduction Algorithm"
 
 __all__ = [
