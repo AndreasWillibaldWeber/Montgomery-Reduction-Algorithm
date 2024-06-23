@@ -81,6 +81,7 @@ c = MMM(r(E), 1, n)
 - [x] implement tests
 - [ ] implement the calculation of test vectors
 - [ ] implement the generation of random test vectors
+- [ ] implement a cli for standalone usage
 - [ ] add use description to readme.md
 - [ ] add an example and description of how to use the package
 - [x] add build description to readme.md
