@@ -17,7 +17,7 @@ maintainers = [
   {name = "Andreas W. Weber", email = "andreas.willibald.weber@gmail.com"},
 ]
 description = "Montgomery Reduction Algorithm python package to verify and study hardware implementations."
-readme = {file = "README.txt", content-type = "text/markdown"}
+readme = {file = "README.md", content-type = "text/markdown"}
 license = {file = "LICENSE"}
 keywords = ["Montgomery", "reduction", "algorithm", "multiplication", "exponentiation", "hardware", "study", "research"]
 classifiers = [
