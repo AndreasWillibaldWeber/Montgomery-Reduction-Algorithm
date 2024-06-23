@@ -1,6 +1,12 @@
 # Montgomery-Reduction-Algorithm
 Montgomery Reduction Algorithm python package to verify and study hardware implementations.
 
+## Setup, Build and Installation
+
+- Setup: `pip install -r requirements.txt`
+- Build: `python -m build`
+- Installation: `pip install <path-to-wheel>`
+
 ## Config MMR Package
 
 - `MMR.N`: Default value is `32`
