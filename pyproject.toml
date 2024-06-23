@@ -9,3 +9,25 @@ packages = ["MontgomeryReductionAlgorithm"]
 name = "Montgomery-Reduction-Algorithm"
 version = "0.0.1"
 dependencies = []
+requires-python = ">=3.8"
+authors = [
+  {name = "Andreas W. Weber", email = "andreas.willibald.weber@gmail.com"},
+]
+maintainers = [
+  {name = "Andreas W. Weber", email = "andreas.willibald.weber@gmail.com"},
+]
+description = "Montgomery Reduction Algorithm python package to verify and study hardware implementations."
+readme = {file = "README.txt", content-type = "text/markdown"}
+license = {file = "LICENSE"}
+keywords = ["Montgomery", "reduction", "algorithm", "multiplication", "exponentiation", "hardware", "study", "research"]
+classifiers = [
+  "Intended Audience :: Science/Research",
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python :: 3.8",
+  "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
+Documentation = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
+Repository = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
