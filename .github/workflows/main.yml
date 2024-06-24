@@ -1,0 +1,44 @@
+name: build
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    name: build specification 
+    runs-on:  ubuntu-latest
+    env:
+      CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
+      CI_COMMIT_AUTHOR: Continuous Integration
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: set up git repository
+        uses: actions/checkout@v4
+      
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' 
+
+      - name: install dependencies
+        run: pip install -r requirements.txt
+
+      - name: build python package
+        run: python -m build
+
+      - name: finalize release
+        run: |
+          mkdir dist/MontgomeryReductionAlgorithm
+          mv dist/montgomery_reduction_algorithm-* dist/MontgomeryReductionAlgorithm/
+          mv dist/Montgomery_Reduction_Algorithm-* dist/MontgomeryReductionAlgorithm/
+          mv README.md dist/MontgomeryReductionAlgorithm/README.md
+          mv LICENSE dist/MontgomeryReductionAlgorithm/LICENSE
+
+      - name: upload packages to artifactory
+        uses: actions/upload-artifact@v4
+        with:
+          name: MontgomeryReductionAlgorithm
+          path: |
+            ./dist/MontgomeryReductionAlgorithm
+          if-no-files-found: error

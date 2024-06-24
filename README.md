@@ -1,3 +1,6 @@
+
+[![spec](https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm/actions/workflows/main.yml/badge.svg)](https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm/actions/workflows/main.yml)
+
 # Montgomery-Reduction-Algorithm
 Montgomery Reduction Algorithm python package to verify and study hardware implementations.
 
