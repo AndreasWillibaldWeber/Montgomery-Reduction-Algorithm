@@ -79,6 +79,7 @@ c = MMM(r(E), 1, n)
 - [x] implement Montgomery Modular Exponentiation (MME)
 - [x] implement logging of calculation steps
 - [x] implement tests
+- [x] implement the calculation of rsa values for encrypting and decrypting
 - [ ] implement the calculation of test vectors
 - [ ] implement the generation of random test vectors
 - [ ] implement a cli for standalone usage
@@ -99,3 +100,7 @@ c = MMM(r(E), 1, n)
 [3] https://www.emsec.ruhr-uni-bochum.de/media/attachments/files/2015/09/IKV-1_2015-04-28.pdf.
 
 [4] Elif Bilge Kavun. Security Processor Design - Lecture and Exercise Slides, 2024.
+
+[5] https://www.extendedeuclideanalgorithm.com
+
+[6] https://www.geeksforgeeks.org
