@@ -16,6 +16,27 @@ Montgomery Reduction Algorithm python package to verify and study hardware imple
 - `MMR.MME_LOG`: Default is `False`. Set to `True` to log the mme m and r values for each calculation step.
 - `MMR.MMM_LOG`: Default is `False`. Set to `True` to log the mmm q and s values for each calculation step.
 
+## CLI
+
+The CLI-script is currently placed in the `main.py` file.
+
+##### Example 1:
+
+Call the Montgomery Modular Multiplication from the command line interface
+```bash
+$ python main.py mmm -a 0x00112233 -b 0x44556677 -n 0x93849ca7
+```
+Output: `1699857101 0x6551c2cd`
+
+##### Example 2
+
+Call the Montgomery Modular Exponentiation from the command line interface
+```bash
+python main.py mme -m 0x00112233 -e 0x44556677 -n 0x93849ca7 -k 0x8c8d9129
+```
+Output: `613470512 0x2490d130`
+
+
 ## Montgomery Modular Reduction
 
 RSA is defined for
