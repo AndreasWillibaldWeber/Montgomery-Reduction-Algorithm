@@ -31,3 +31,6 @@ classifiers = [
 Homepage = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
 Documentation = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
 Repository = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
+
+[project.scripts]
+mra = "MontgomeryreductionAlgorithm.main:main"
