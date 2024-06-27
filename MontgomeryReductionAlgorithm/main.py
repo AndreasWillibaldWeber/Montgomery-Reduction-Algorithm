@@ -1,6 +1,7 @@
 import argparse
-from mmr import MMR
-from srsa import RSA
+from MontgomeryReductionAlgorithm.mmr import MMR
+from MontgomeryReductionAlgorithm.srsa import RSA
+
 
 def setup_argparse():
     parser = argparse.ArgumentParser(prog='MontgomeryReductionAlgorithm')
@@ -18,6 +19,12 @@ def setup_argparse():
     parser_mmm.add_argument('-a', required=True, type=lambda x: int(x,0), help='a help')
     parser_mmm.add_argument('-b', required=True, type=lambda x: int(x,0), help='b help')
     parser_mmm.add_argument('-n', required=True, type=lambda x: int(x,0), help='n help')
+
+    #parser_rsa = subparsers.add_parser('rsa', help='rsa help')
+    #parser_rsa.add_argument('-n', choices='XYZ', help='baz help')
+
+    #parser_tvec = subparsers.add_parser('tvec', help='tvec help')
+    #parser_tvec.add_argument('--baz', choices='XYZ', help='baz help')
 
     return parser.parse_args()
 
