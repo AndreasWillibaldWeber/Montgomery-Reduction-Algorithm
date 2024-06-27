@@ -33,4 +33,4 @@ Documentation = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-A
 Repository = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
 
 [project.scripts]
-mra = "MontgomeryreductionAlgorithm.main:main"
+mra = "MontgomeryReductionAlgorithm.main:main"
