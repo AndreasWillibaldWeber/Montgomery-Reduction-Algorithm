@@ -22,8 +22,8 @@ The CLI-script is currently placed in the `main.py` file.
 
 ### MMR
 
-* **mmm** -a *{int}*, -b *{int}*, -n *{int}*
-* **mme** -m *{int}*, -e *{int}*, -n *{int}*, -k *{int}*
+* **mmm** -a *{int}*, -b *{int}*, -n *{int}* &emsp; Montgomery Modular Multiplication
+* **mme** -m *{int}*, -e *{int}*, -n *{int}*, -k *{int}* &emsp; Montgomery Modular Exponentiation
 
 ##### Example 1:
 
@@ -43,19 +43,19 @@ Output: `613470512 0x2490d130`
 
 ### RSA
 
-* **gcd** -p *{int}*, -q *{int}*
-* **lcm** -p *{int}*, -q *{int}*
-* **soe** [--qmin *{int}*, --qmax *{int}*]
-* **n** -p *{int}*, -q *{int}*
-* **tot** -p *{int}*, -q *{int}*
-* **cop** -p *{int}*, -q *{int}*
-* **e** --totn *{int}*
-* **chke** -e *{int}*, --totn *{int}*
-* **d** -e *{int}*, -n *{int}*
-* **muli** -e *{int}*, -n *{int}*
-* **egcd** -n *{int}*, -e *{int}*
-* **encrypt** -m *{int}*, -e *{int}*, -n *{int}*
-* **decrypt** -c *{int}*, -d *{int}*, -n *{int}*
+* **gcd** -p *{int}*, -q *{int}* &emsp; Greatest Common Divisor
+* **lcm** -p *{int}*, -q *{int}* &emsp; Least Common Multiple
+* **soe** [--qmin *{int}*, --qmax *{int}*] &emsp; Sieve of Eratosthenes
+* **n** -p *{int}*, -q *{int}* &emsp; n
+* **tot** -p *{int}*, -q *{int}* &emsp; tot
+* **cop** -p *{int}*, -q *{int}* &emsp; Coprime
+* **e** --totn *{int}* &emsp; e
+* **chke** -e *{int}*, --totn *{int}* &emsp; Check e
+* **d** -e *{int}*, -n *{int}* &emsp; d
+* **muli** -e *{int}*, -n *{int}* &emsp; Multiplicative Inverse
+* **egcd** -n *{int}*, -e *{int}* &emsp; Extended Greatest Common Divisor
+* **encrypt** -m *{int}*, -e *{int}*, -n *{int}* &emsp; Encrypt
+* **decrypt** -c *{int}*, -d *{int}*, -n *{int}* &emsp; Decrypt
 
 
 ##### Example 1
