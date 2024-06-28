@@ -20,6 +20,11 @@ Montgomery Reduction Algorithm python package to verify and study hardware imple
 
 The CLI-script is currently placed in the `main.py` file.
 
+### MMR
+
+* **mmm** -a *{int}*, -b *{int}*, -n *{int}*
+* **mme** -m *{int}*, -e *{int}*, -n *{int}*, -k *{int}*
+
 ##### Example 1:
 
 Call Montgomery Modular Multiplication from the command line interface
@@ -36,23 +41,40 @@ mra mme -m 0x00112233 -e 0x44556677 -n 0x93849ca7 -k 0x8c8d9129
 ```
 Output: `613470512 0x2490d130`
 
-##### Example 3
+### RSA
+
+* **gcd** -p *{int}*, -q *{int}*
+* **lcm** -p *{int}*, -q *{int}*
+* **soe** [--qmin *{int}*, --qmax *{int}*]
+* **n** -p *{int}*, -q *{int}*
+* **tot** -p *{int}*, -q *{int}*
+* **cop** -p *{int}*, -q *{int}*
+* **e** --totn *{int}*
+* **chke** -e *{int}*, --totn *{int}*
+* **d** -e *{int}*, -n *{int}*
+* **muli** -e *{int}*, -n *{int}*
+* **egcd** -n *{int}*, -e *{int}*
+* **encrypt** -m *{int}*, -e *{int}*, -n *{int}*
+* **decrypt** -c *{int}*, -d *{int}*, -n *{int}*
+
+
+##### Example 1
 
 Call Greatest Common Divisor from the command line interface
 ```bash
-mra gcd -q 4 -p 2
+mra gcd -p 2 -q 4 
 ```
 Output: `2 0x2`
 
-##### Example 4
+##### Example 2
 
 Call Least Common Multiple from the command line interface
 ```bash
-mra lcm -q 5 -p 2
+mra lcm -p 2 -q 4
 ```
 Output: `10 0xa`
 
-##### Example 5
+##### Example 3
 
 Call encrypt from the command line interface
 ```bash
@@ -60,7 +82,7 @@ mra encrypt -m 18 -e 257 -n 21
 ```
 Output: `9 0x9`
 
-##### Example 6
+##### Example 4
 
 Call decrypt from the command line interface
 ```bash
