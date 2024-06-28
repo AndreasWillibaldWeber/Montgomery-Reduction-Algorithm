@@ -22,20 +22,51 @@ The CLI-script is currently placed in the `main.py` file.
 
 ##### Example 1:
 
-Call the Montgomery Modular Multiplication from the command line interface
+Call Montgomery Modular Multiplication from the command line interface
 ```bash
-$ python main.py mmm -a 0x00112233 -b 0x44556677 -n 0x93849ca7
+mra mmm -a 0x00112233 -b 0x44556677 -n 0x93849ca7
 ```
 Output: `1699857101 0x6551c2cd`
 
 ##### Example 2
 
-Call the Montgomery Modular Exponentiation from the command line interface
+Call Montgomery Modular Exponentiation from the command line interface
 ```bash
-python main.py mme -m 0x00112233 -e 0x44556677 -n 0x93849ca7 -k 0x8c8d9129
+mra mme -m 0x00112233 -e 0x44556677 -n 0x93849ca7 -k 0x8c8d9129
 ```
 Output: `613470512 0x2490d130`
 
+##### Example 3
+
+Call Greatest Common Divisor from the command line interface
+```bash
+mra gcd -q 4 -p 2
+```
+Output: `2 0x2`
+
+##### Example 4
+
+Call Least Common Multiple from the command line interface
+```bash
+mra lcm -q 5 -p 2
+```
+Output: `10 0xa`
+
+##### Example 5
+
+Call encrypt from the command line interface
+```bash
+mra encrypt -m 18 -e 257 -n 21
+```
+Output: `9 0x9`
+
+##### Example 6
+
+Call decrypt from the command line interface
+```bash
+mra decrypt -c 9 -d 17 -n 21
+```
+Output: `18 0x12`
 
 ## Montgomery Modular Reduction
 
@@ -106,7 +137,9 @@ c = MMM(r(E), 1, n)
 - [x] implement the calculation of rsa values for encrypting and decrypting
 - [ ] implement the calculation of test vectors
 - [ ] implement the generation of random test vectors
-- [ ] implement a cli for standalone usage
+- [x] implement a cli for standalone usage (MMR, RSA)
+- [ ] add help text for MMR and RSA cli
+- [ ] implement a cli for standalone usage (test vector generator)
 - [ ] add use description to readme.md
 - [ ] add an example and description of how to use the package
 - [x] add build description to readme.md
