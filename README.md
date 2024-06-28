@@ -2,6 +2,7 @@
 [![spec](https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm/actions/workflows/main.yml/badge.svg)](https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm/actions/workflows/main.yml)
 
 # Montgomery-Reduction-Algorithm
+
 Montgomery Reduction Algorithm python package to verify and study hardware implementations.
 
 ## Setup, Build and Installation
@@ -46,16 +47,16 @@ Output: `613470512 0x2490d130`
 * **gcd** -p *{int}*, -q *{int}* &emsp; Greatest Common Divisor
 * **lcm** -p *{int}*, -q *{int}* &emsp; Least Common Multiple
 * **soe** [--qmin *{int}*, --qmax *{int}*] &emsp; Sieve of Eratosthenes
-* **n** -p *{int}*, -q *{int}* &emsp; n
-* **tot** -p *{int}*, -q *{int}* &emsp; tot
+* **n** -p *{int}*, -q *{int}* &emsp; Modulus n
+* **tot** -p *{int}*, -q *{int}* &emsp; tot(n)
 * **cop** -p *{int}*, -q *{int}* &emsp; Coprime
-* **e** --totn *{int}* &emsp; e
-* **chke** -e *{int}*, --totn *{int}* &emsp; Check e
-* **d** -e *{int}*, -n *{int}* &emsp; d
+* **e** --totn *{int}* &emsp; Fermat Prime
+* **chke** -e *{int}*, --totn *{int}* &emsp; Check if e is coprime to tot(n) and between 1 and tot(n)
+* **d** -e *{int}*, -n *{int}* &emsp; Modular Multiplicative Inverse
 * **muli** -e *{int}*, -n *{int}* &emsp; Multiplicative Inverse
 * **egcd** -n *{int}*, -e *{int}* &emsp; Extended Greatest Common Divisor
-* **encrypt** -m *{int}*, -e *{int}*, -n *{int}* &emsp; Encrypt
-* **decrypt** -c *{int}*, -d *{int}*, -n *{int}* &emsp; Decrypt
+* **encrypt** -m *{int}*, -e *{int}*, -n *{int}* &emsp; RSA Encryption
+* **decrypt** -c *{int}*, -d *{int}*, -n *{int}* &emsp; RSA Decryption
 
 
 ##### Example 1
