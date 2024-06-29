@@ -1,11 +1,12 @@
 import argparse
+
 from MontgomeryReductionAlgorithm.mmr import MMR
 from MontgomeryReductionAlgorithm.srsa import RSA
 
 
 def setup_argparse():
     parser = argparse.ArgumentParser(prog='MontgomeryReductionAlgorithm')
-    parser.add_argument('-v', action='store_true', help='version')
+    parser.add_argument('-v', action='store_true', help='version, license, author')
     
     subparsers = parser.add_subparsers(dest="cmd", help='help for commands')
 
@@ -53,14 +54,14 @@ def setup_argparse():
 
     parser_d = subparsers.add_parser('d', help='modular multiplicative inverse of e (mod tot(n)).')
     parser_d.add_argument('-e', required=True, type=lambda x: int(x,0), help='greatest e where 1 < e < tot(n), common choices are the Fermat primes 2, 17, 65537, ...')
-    parser_d.add_argument('-n', required=True, type=lambda x: int(x,0), help='n = p * q where p and q are distinct primes')
+    parser_d.add_argument('--totn', required=True, type=lambda x: int(x,0), help="Euler's Totient Function tot(n) = φ(n) = (p - 1) * (q - 1).")
 
     parser_muli = subparsers.add_parser('muli', help='multiplicative inverse')
     parser_muli.add_argument('-e', required=True, type=lambda x: int(x,0), help='greatest e where 1 < e < tot(n), common choices are the Fermat primes 2, 17, 65537, ...')
-    parser_muli.add_argument('-n', required=True, type=lambda x: int(x,0), help='n = p * q where p and q are distinct primes.')
+    parser_muli.add_argument('--totn', required=True, type=lambda x: int(x,0), help="Euler's Totient Function tot(n) = φ(n) = (p - 1) * (q - 1).")
 
     parser_egcd = subparsers.add_parser('egcd', help='extended greatest common divisor.')
-    parser_egcd.add_argument('-n', required=True, type=lambda x: int(x,0), help='n = p * q where p and q are distinct primes')
+    parser_egcd.add_argument('--totn', required=True, type=lambda x: int(x,0), help="Euler's Totient Function tot(n) = φ(n) = (p - 1) * (q - 1).")
     parser_egcd.add_argument('-e', required=True, type=lambda x: int(x,0), help='greatest e where 1 < e < tot(n), common choices are the Fermat primes 2, 17, 65537, ...')
 
     parser_encrypt = subparsers.add_parser('encrypt', help='RSA encryption.')
@@ -127,19 +128,19 @@ def run_check_e(e, tot_n):
     print(r, hex(r))
 
 
-def run_d(e, n):
-    r = RSA.n(e, n)
+def run_d(e, tot_n):
+    r = RSA.d(e, tot_n)
     print(r, hex(r))
 
 
-def run_multiplicative_inverse(e, n):
-    r = RSA.multiplicative_inverse(e, n)
+def run_multiplicative_inverse(e, tot_n):
+    r = RSA.multiplicative_inverse(e, tot_n)
     print(r, hex(r))
 
 
-def run_egcd(n, e):
-    r = RSA.extened_gcd(n, e)
-    print(r, hex(r))
+def run_egcd(tot_n, e):
+    r1, _, _ = RSA.extened_gcd(tot_n, e)
+    print(r1, hex(r1))
 
 
 def run_encrypt(m, e, n):
@@ -155,7 +156,7 @@ def run_decrypt(c, d, n):
 def main():
     args = setup_argparse()
     if args.v:
-        print("v0.0.3-alpha")
+        print("Version: 0.0.4-beta\nLicense: MIT\nAuthor: Andreas W. Weber")
     if args.cmd == 'mmm':
         run_mmm(args.a, args.b, args.n)
     if args.cmd == 'mme':
@@ -177,11 +178,11 @@ def main():
     if args.cmd == 'chke':
         run_check_e(args.e, args.totn)
     if args.cmd == 'd':
-        run_d(args.e, args.n)
+        run_d(args.e, args.totn)
     if args.cmd == 'muli':
-        run_multiplicative_inverse(args.e, args.n)
+        run_multiplicative_inverse(args.e, args.totn)
     if args.cmd == 'egcd':
-        run_egcd(args.n, args.e)
+        run_egcd(args.totn, args.e)
     if args.cmd == 'encrypt':
         run_encrypt(args.m, args.e, args.n)
     if args.cmd == 'decrypt':

@@ -17,9 +17,20 @@ Montgomery Reduction Algorithm python package to verify and study hardware imple
 - `MMR.MME_LOG`: Default is `False`. Set to `True` to log the mme m and r values for each calculation step.
 - `MMR.MMM_LOG`: Default is `False`. Set to `True` to log the mmm q and s values for each calculation step.
 
+## GUI
+
+The GUI-script is currently placed in the `gui.py` file.
+
+##### Example 1:
+
+Call graphical user interface from the command line interface
+```bash
+mra-gui
+```
+
 ## CLI
 
-The CLI-script is currently placed in the `main.py` file.
+The CLI-script is currently placed in the `cli.py` file.
 
 ### MMR
 
@@ -30,7 +41,7 @@ The CLI-script is currently placed in the `main.py` file.
 
 Call Montgomery Modular Multiplication from the command line interface
 ```bash
-mra mmm -a 0x00112233 -b 0x44556677 -n 0x93849ca7
+mra-cli mmm -a 0x00112233 -b 0x44556677 -n 0x93849ca7
 ```
 Output: `1699857101 0x6551c2cd`
 
@@ -38,7 +49,7 @@ Output: `1699857101 0x6551c2cd`
 
 Call Montgomery Modular Exponentiation from the command line interface
 ```bash
-mra mme -m 0x00112233 -e 0x44556677 -n 0x93849ca7 -k 0x8c8d9129
+mra-cli mme -m 0x00112233 -e 0x44556677 -n 0x93849ca7 -k 0x8c8d9129
 ```
 Output: `613470512 0x2490d130`
 
@@ -52,9 +63,9 @@ Output: `613470512 0x2490d130`
 * **cop** -p *{int}*, -q *{int}* &emsp; Coprime
 * **e** --totn *{int}* &emsp; Fermat Prime
 * **chke** -e *{int}*, --totn *{int}* &emsp; Check if e is coprime to tot(n) and between 1 and tot(n)
-* **d** -e *{int}*, -n *{int}* &emsp; Modular Multiplicative Inverse
-* **muli** -e *{int}*, -n *{int}* &emsp; Multiplicative Inverse
-* **egcd** -n *{int}*, -e *{int}* &emsp; Extended Greatest Common Divisor
+* **d** -e *{int}*, --totn *{int}* &emsp; Modular Multiplicative Inverse
+* **muli** -e *{int}*, --totn *{int}* &emsp; Multiplicative Inverse
+* **egcd** --totn *{int}*, -e *{int}* &emsp; Extended Greatest Common Divisor
 * **encrypt** -m *{int}*, -e *{int}*, -n *{int}* &emsp; RSA Encryption
 * **decrypt** -c *{int}*, -d *{int}*, -n *{int}* &emsp; RSA Decryption
 
@@ -63,7 +74,7 @@ Output: `613470512 0x2490d130`
 
 Call Greatest Common Divisor from the command line interface
 ```bash
-mra gcd -p 2 -q 4 
+mra-cli gcd -p 2 -q 4 
 ```
 Output: `2 0x2`
 
@@ -71,7 +82,7 @@ Output: `2 0x2`
 
 Call Least Common Multiple from the command line interface
 ```bash
-mra lcm -p 2 -q 4
+mra-cli lcm -p 2 -q 4
 ```
 Output: `10 0xa`
 
@@ -79,7 +90,7 @@ Output: `10 0xa`
 
 Call encrypt from the command line interface
 ```bash
-mra encrypt -m 18 -e 257 -n 21
+mra-cli encrypt -m 18 -e 257 -n 21
 ```
 Output: `9 0x9`
 
@@ -87,7 +98,7 @@ Output: `9 0x9`
 
 Call decrypt from the command line interface
 ```bash
-mra decrypt -c 9 -d 17 -n 21
+mra-cli decrypt -c 9 -d 17 -n 21
 ```
 Output: `18 0x12`
 
@@ -159,10 +170,13 @@ c = MMM(r(E), 1, n)
 - [x] implement tests
 - [x] implement the calculation of rsa values for encrypting and decrypting
 - [ ] implement the calculation of test vectors
-- [ ] implement the generation of random test vectors
+- [ ] implement the generation of random test vector
+- [ ] implement hex to decimal and decimal to hex conversion for gui and cli
 - [x] implement a cli for standalone usage (MMR, RSA)
-- [ ] add help text for MMR and RSA cli
+- [x] add help text for MMR and RSA cli
+- [x] implement a gui for standalone usage (MMR, RSA)
 - [ ] implement a cli for standalone usage (test vector generator)
+- [ ] implement a gui for standalone usage (test vector generator)
 - [ ] add use description to readme.md
 - [ ] add an example and description of how to use the package
 - [x] add build description to readme.md

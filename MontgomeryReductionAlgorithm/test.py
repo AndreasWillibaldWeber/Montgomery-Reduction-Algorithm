@@ -234,20 +234,20 @@ class TestRSA(unittest.TestCase):
 
     def test_d_1(self):
         e = 65537
-        n = 21
+        tot_n = 21
         expected = 5
 
-        result = RSA.d(e, n)
+        result = RSA.d(e, tot_n)
         print("Result:", result, expected, result == expected)
         self.assertEqual(expected, result)
 
     
     def test_d_2(self):
         e = 257
-        n = 21
+        tot_n = 21
         expected = 17
 
-        result = RSA.d(e, n)
+        result = RSA.d(e, tot_n)
         print("Result:", result, expected, result == expected)
         self.assertEqual(expected, result)
 
