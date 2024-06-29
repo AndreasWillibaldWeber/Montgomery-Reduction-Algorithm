@@ -10,7 +10,7 @@ packages = ["MontgomeryReductionAlgorithm"]
 
 [project]
 name = "Montgomery-Reduction-Algorithm"
-version = "0.0.3-alpha"
+version = "0.0.4-beta"
 dependencies = []
 requires-python = ">=3.8"
 authors = [
@@ -36,4 +36,5 @@ Documentation = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-A
 Repository = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
 
 [project.scripts]
-mra = "MontgomeryReductionAlgorithm.main:main"
+mra-cli = "MontgomeryReductionAlgorithm.cli:main"
+mra-gui = "MontgomeryReductionAlgorithm.gui:main"

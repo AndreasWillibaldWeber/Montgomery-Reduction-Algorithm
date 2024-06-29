@@ -56,26 +56,26 @@ class RSA():
 
 
     @staticmethod
-    def d(e, n):
-        return RSA.multiplicative_inverse(e, n)
+    def d(e, tot_n):
+        return RSA.multiplicative_inverse(e, tot_n)
 
 
     @staticmethod
-    def multiplicative_inverse(e, n):
-        gcd, _, y = RSA.extened_gcd(n, e)
+    def multiplicative_inverse(e, tot_n):
+        gcd, _, y = RSA.extened_gcd(tot_n, e)
         if(gcd == 1):
-            return y % n
+            return y % tot_n
         raise Exception("gcd has no multiplicative inverse")
 
 
     @staticmethod
-    def extened_gcd(n, e):
+    def extened_gcd(tot_n, e):
         q, r, a, c, y, b, x, z = 0, 1, 1, 1, 1, 0, 0, 0
         while r > 0:
-            q = n // e
-            r, c, z = n - q * e, a - q * b, x - q * y
+            q = tot_n // e
+            r, c, z = tot_n - q * e, a - q * b, x - q * y
             if(r > 0):
-                n, e, a, b, x, y = e, r, b, c, y, z
+                tot_n, e, a, b, x, y = e, r, b, c, y, z
         return abs(e), b, y
 
 
