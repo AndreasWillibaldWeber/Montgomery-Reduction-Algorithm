@@ -24,6 +24,11 @@ class MMRGui(tk.Tk):
         file_menu.add_command(label="Close", command=self.close)
         menu_bar.add_cascade(label="Menu", menu=file_menu)
         
+        convert_menu = tk.Menu(menu_bar, tearoff=0)
+        convert_menu.add_command(label="To Hexadecimal", command=self.convert_to_hexadecimal)
+        convert_menu.add_command(label="To Decimal", command=self.convert_to_decimal)
+        menu_bar.add_cascade(label="Convert", menu=convert_menu)
+
         help_menu = tk.Menu(menu_bar, tearoff=0)
         help_menu.add_command(label="Version", command=self.show_version_info)
         menu_bar.add_cascade(label="Help", menu=help_menu)
@@ -169,24 +174,30 @@ class MMRGui(tk.Tk):
         tk.Button(frame_decryption, text="Decrypt", command=self.calculate_decryption).grid(row=30, columnspan=4)
 
         frame_general = tk.LabelFrame(self, text="General", padx=10, pady=10)
-        frame_general.grid(row=3, columnspan=2, padx=10, pady=10)
+        frame_general.grid(row=3, column=1, padx=10, pady=10)
 
         tk.Button(frame_general, text="Clear", command=self.clear).grid(row=31, column=0)
         tk.Button(frame_general, text="Close", command=self.close).grid(row=31, column=1)
 
+        frame_convert = tk.LabelFrame(self, text="Convert", padx=10, pady=10)
+        frame_convert.grid(row=3, column=0, padx=10, pady=10)
 
-    def set_entry_value(self, entry, value):
+        tk.Button(frame_convert, text="To Hexadecimal", command=self.convert_to_hexadecimal).grid(row=31, column=0)
+        tk.Button(frame_convert, text="To Decimal", command=self.convert_to_decimal).grid(row=31, column=1)
+
+
+    def set_entry_value(self, entry, value, state='readonly'):
         entry.config(state='normal')
         entry.delete(0, tk.END)
         entry.insert(0, value)
-        entry.config(state='readonly')
+        entry.config(state=state)
 
 
-    def set_text_value(self, text, value):
+    def set_text_value(self, text, value, state='disabled'):
         text.config(state='normal')
         text.delete('1.0', 'end')
         text.insert('1.0', value)
-        text.config(state='disabled')
+        text.config(state=state)
 
 
     def close(self):
@@ -233,7 +244,7 @@ class MMRGui(tk.Tk):
 
             primes = RSA.sieve_of_eratosthenes(q_max=q_max)
             primes = [str(p) for p in primes]
-            self.set_text_value(self.text_primes, str(", ".join(primes)))
+            self.set_text_value(self.text_primes, str(",".join(primes)))
         except ValueError:
             messagebox.showerror("Input Error", "Please enter valid integers.")
 
@@ -297,6 +308,9 @@ class MMRGui(tk.Tk):
             self.set_entry_value(self.entry_c1, str(c))
         except ValueError:
             messagebox.showerror("Input Error", "Please enter valid integers.")
+        except Exception as e:
+            self.clear()
+            messagebox.showerror("Error", e)
 
 
     def calculate_decryption(self):
@@ -309,6 +323,91 @@ class MMRGui(tk.Tk):
             self.set_entry_value(self.entry_m2, str(m))
         except ValueError:
             messagebox.showerror("Input Error", "Please enter valid integers.")
+        except Exception as e:
+            self.clear()
+            messagebox.showerror("Error", e)
+
+
+    def text_convert_to(self, text, numerative='decimal'):
+        try:
+            txt = text.get('1.0', 'end').strip()
+            if txt:
+                txt = txt.strip().split(',')
+                txt = [int(t.strip(), 0) for t in txt]
+                if numerative == 'hexadecimal':
+                    txt = [str(hex(t)) for t in txt]
+                txt = ",".join([str(t) for t in txt])
+                self.set_text_value(text, txt)
+        except ValueError:
+            messagebox.showerror("Input Error", "Please enter valid integers.")
+        except Exception as e:
+            self.clear()
+            messagebox.showerror("Error", e)
+
+
+    def entry_convert_to(self, entry, numerative='decimal', state='normal'):
+        try:
+            txt = entry.get()
+            if txt:
+                txt = int(txt, 0)
+                if numerative == 'hexadecimal':
+                    txt = hex(txt)
+                txt = str(txt)
+                self.set_entry_value(entry, txt, state=state)
+        except ValueError:
+            messagebox.showerror("Input Error", "Please enter valid integers.")
+        except Exception as e:
+            self.clear()
+            messagebox.showerror("Error", e)
+
+
+
+    def convert_to(self, numerative='decimal'):
+        try:
+            self.text_convert_to(self.text_primes, numerative)
+
+            self.entry_convert_to(self.entry_p, numerative=numerative)
+            self.entry_convert_to(self.entry_q, numerative=numerative)
+
+            self.entry_convert_to(self.entry_n, numerative=numerative, state='readonly')
+            self.entry_convert_to(self.entry_tot, numerative=numerative, state='readonly')
+            self.entry_convert_to(self.entry_e1, numerative=numerative, state='readonly')
+            self.entry_convert_to(self.entry_d, numerative=numerative, state='readonly')
+
+            self.entry_convert_to(self.entry_m, numerative=numerative)
+            self.entry_convert_to(self.entry_e2, numerative=numerative)
+            self.entry_convert_to(self.entry_n1, numerative=numerative)
+            self.entry_convert_to(self.entry_k, numerative=numerative)
+            self.entry_convert_to(self.entry_mme, numerative=numerative, state='readonly')
+
+            self.entry_convert_to(self.entry_a, numerative=numerative)
+            self.entry_convert_to(self.entry_b, numerative=numerative)
+            self.entry_convert_to(self.entry_n2, numerative=numerative)
+            self.entry_convert_to(self.entry_mmm, numerative=numerative, state='readonly')
+
+            self.entry_convert_to(self.entry_m1, numerative=numerative)
+            self.entry_convert_to(self.entry_e3, numerative=numerative)
+            self.entry_convert_to(self.entry_n3, numerative=numerative)
+            self.entry_convert_to(self.entry_c1, numerative=numerative, state='readonly')
+
+            self.entry_convert_to(self.entry_c2, numerative=numerative)
+            self.entry_convert_to(self.entry_d1, numerative=numerative)
+            self.entry_convert_to(self.entry_n4, numerative=numerative)
+            self.entry_convert_to(self.entry_m2, numerative=numerative, state='readonly')
+
+        except ValueError:
+            messagebox.showerror("Input Error", "Please enter valid integers.")
+        except Exception as e:
+            self.clear()
+            messagebox.showerror("Error", e)
+
+
+    def convert_to_hexadecimal(self):
+        self.convert_to(numerative='hexadecimal')
+
+    
+    def convert_to_decimal(self):
+        self.convert_to(numerative='decimal')
 
 
 def main():
