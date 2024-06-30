@@ -37,7 +37,7 @@ class MMRGui(tk.Tk):
     
 
     def show_version_info(self):
-        messagebox.showinfo("Version", "Version: 0.0.4-beta\nLicense: MIT\nAuthor: Andreas W. Weber")
+        messagebox.showinfo("Version", "Version: 0.0.5-beta\nLicense: MIT\nAuthor: Andreas W. Weber")
 
 
     def create_widgets(self):

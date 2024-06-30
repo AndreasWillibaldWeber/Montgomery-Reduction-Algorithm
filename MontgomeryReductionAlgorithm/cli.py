@@ -163,7 +163,7 @@ def print_result(r, nr=None):
 def main():
     args = setup_argparse()
     if args.v:
-        print("Version: 0.0.4-beta\nLicense: MIT\nAuthor: Andreas W. Weber")
+        print("Version: 0.0.5-beta\nLicense: MIT\nAuthor: Andreas W. Weber")
     if args.cmd == 'mmm':
         run_mmm(args.a, args.b, args.n)
     if args.cmd == 'mme':
