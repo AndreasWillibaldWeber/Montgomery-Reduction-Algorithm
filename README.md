@@ -171,7 +171,8 @@ c = MMM(r(E), 1, n)
 - [x] implement the calculation of rsa values for encrypting and decrypting
 - [ ] implement the calculation of test vectors
 - [ ] implement the generation of random test vector
-- [ ] implement hex to decimal and decimal to hex conversion for gui and cli
+- [x] implement hex to decimal and decimal to hex conversion for gui
+- [ ] implement hex to decimal and decimal to hex conversion for cli
 - [x] implement a cli for standalone usage (MMR, RSA)
 - [x] add help text for MMR and RSA cli
 - [x] implement a gui for standalone usage (MMR, RSA)
