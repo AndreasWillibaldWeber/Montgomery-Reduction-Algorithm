@@ -79,78 +79,85 @@ def setup_argparse():
 
 def run_mmm(a, b, n):
     r = MMR.mmm(a, b, n)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_mme(m, e, n ,k):
     r = MMR.mme(m, e, n, k)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_gcd(p, q):
     r = RSA.gcd(p, q)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_lcm(p, q):
     r = RSA.lcm(p, q)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_sieve_of_eratosthenes(q_min, q_max):
     rs = RSA.sieve_of_eratosthenes(q_min, q_max)
-    for r in rs:
-        print(r, hex(r))
+    for nr, r in enumerate(rs):
+        print_result(r, nr=nr)
 
 
 def run_n(p, q):
     r = RSA.n(p, q)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_tot(p, q):
     r = RSA.tot(p, q)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_is_coprime(p, q):
     r = RSA.is_coprime(p, q)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_e(tot_n):
     r = RSA.e(tot_n)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_check_e(e, tot_n):
     r = RSA.check_e(e, tot_n)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_d(e, tot_n):
     r = RSA.d(e, tot_n)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_multiplicative_inverse(e, tot_n):
     r = RSA.multiplicative_inverse(e, tot_n)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_egcd(tot_n, e):
     r1, _, _ = RSA.extened_gcd(tot_n, e)
-    print(r1, hex(r1))
+    print_result(r1)
 
 
 def run_encrypt(m, e, n):
     r = RSA.encrypt(m, e, n)
-    print(r, hex(r))
+    print_result(r)
 
 
 def run_decrypt(c, d, n):
     r = RSA.decrypt(c, d, n)
-    print(r, hex(r))
+    print_result(r)
+
+
+def print_result(r, nr=None):
+    if nr:
+        print('Nr: {}, Decimal: {}, Hexadecimal: {}'.format(nr, r, hex(r)))
+    else:
+        print('Decimal: {}\nHexadecimal: {}'.format(r, hex(r)))
 
 
 def main():
