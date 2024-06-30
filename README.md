@@ -21,6 +21,9 @@ Montgomery Reduction Algorithm python package to verify and study hardware imple
 
 The GUI-script is currently placed in the `gui.py` file.
 
+![mra-gui](docs/images/mra-gui-1.png)
+
+
 ##### Example 1:
 
 Call graphical user interface from the command line interface
