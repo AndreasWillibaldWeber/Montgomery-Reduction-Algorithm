@@ -24,7 +24,7 @@ keywords = ["Montgomery", "reduction", "algorithm", "multiplication", "exponenti
 classifiers = [
   "Intended Audience :: Science/Research",
   "Development Status :: 2 - Pre-Alpha",
-  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
   "License :: OSI Approved :: MIT License",
 ]
