@@ -31,7 +31,7 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
-Homepage = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm/issues"
+Issues = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm/issues"
 Documentation = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
 Repository = "https://github.com/AndreasWillibaldWeber/Montgomery-Reduction-Algorithm"
 
