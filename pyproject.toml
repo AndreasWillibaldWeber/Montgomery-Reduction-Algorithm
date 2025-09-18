@@ -7,7 +7,7 @@ packages = ["MontgomeryReductionAlgorithm"]
 
 [project]
 name = "Montgomery-Reduction-Algorithm"
-version = "0.0.5-pre-alpha"
+version = "0.0.5-alpha"
 dependencies = []
 requires-python = ">=3.8"
 authors = [
