@@ -31,7 +31,6 @@ jobs:
         run: |
           mkdir dist/MontgomeryReductionAlgorithm
           mv dist/montgomery_reduction_algorithm-* dist/MontgomeryReductionAlgorithm/
-          mv dist/Montgomery_Reduction_Algorithm-* dist/MontgomeryReductionAlgorithm/
           mv README.md dist/MontgomeryReductionAlgorithm/README.md
           mv LICENSE dist/MontgomeryReductionAlgorithm/LICENSE
 
